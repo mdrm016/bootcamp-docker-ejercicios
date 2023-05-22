@@ -1,0 +1,10 @@
+bd/Dockerfile
+backend/Dockerfile
+
+.idea
+
+backend/.idea
+backend/venv
+
+frontend/.idea
+frontend/node_modules

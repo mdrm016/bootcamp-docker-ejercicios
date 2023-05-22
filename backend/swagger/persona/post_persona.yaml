@@ -1,0 +1,50 @@
+Guarda un Persona
+---
+tags:
+- "persona"
+responses:
+  200:
+    description: Se guarda Persona
+  401:
+    description: Las credenciales proveídas en los datos de login son inválidos
+  422:
+    description: El access_token no es válido. (Not enough segments, invalid utf-8 chars, etc.)
+parameters:
+  - in: header
+    name: Authorization
+    description: Access token
+    required: true
+    default: Bearer [access_token]
+  - name: body
+    in: body
+    schema:
+      $ref: "#/definitions/PersonaPost"
+definitions:
+    PersonaPost:
+        type: "object"
+        properties:
+            id:
+              type: "int64"
+            documento:
+              type: "string"
+            nombre:
+              type: "string"
+            apellido:
+              type: "string"
+            ciudad:
+              type: "string"
+            direccion:
+              type: "string"
+            telefono:
+              type: "string"
+            email:
+              type: "string"
+        example:
+            id: 11
+            documento: Lorem ipsum dolor sit amet
+            nombre: Lorem ipsum dolor sit amet
+            apellido: Lorem ipsum dolor sit amet
+            ciudad: Lorem ipsum dolor sit amet
+            direccion: Lorem ipsum dolor sit amet
+            telefono: Lorem ipsum dolor si
+            email: Lorem ipsum dolor sit amet
